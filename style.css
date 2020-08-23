@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#container-of-container {
+  width: fit-content;
+  margin: 0 auto;
+  border: 15px solid black;
+}
+
+#skcontainer {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 630px;
+  margin: 0 auto;
+  margin-top: 1.25rem;
+}
+
+#buttons > button {
+  width: 100px;
+  height: 50px;
+}
+
+#buttons > input {
+  width: 100px;
+  height: 50px;
+}
+
+.pixelactive {
+  background-color: black;
+}
+
+.pixel {
+  border: 0.1px dotted black;
+}
