@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch Project</title>
   </head>
-  <body>
-    <div id="container-of-container">
-      <div id="skcontainer"></div>
+  <body ondragstart="return false;" ondrop="return false;">
+    <div draggable="false" id="container-of-container">
+      <div draggable="false" id="skcontainer"></div>
     </div>
 
     <div id="buttons">
       <button id="player-button" type="button">Change grid size</button>
       <button id="reset-button" type="button">Reset grid</button>
-      <input type="color" id="colorpicker" />
+      <input type="color" id="colorpicker" value="#000000" />
     </div>
     <script src="script.js"></script>
   </body>
