@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(218, 218, 218);
+}
+
 #container-of-container {
   width: fit-content;
   margin: 0 auto;
@@ -28,19 +32,38 @@
 }
 
 #buttons > button {
-  width: 100px;
+  width: 120px;
   height: 50px;
 }
 
 #buttons > input {
-  width: 100px;
+  width: 120px;
   height: 50px;
 }
 
-.pixelactive {
-  background-color: black;
+button {
+  box-shadow: -2px 4px 6px -4px #080808;
+  background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  background-color: #33bdef;
+  border-radius: 21px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Trebuchet MS;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: none;
+  text-shadow: 3px 2px 5px #5b6178;
+  outline: none;
+  border: none;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
 }
 
 .pixel {
-  border: 0.1px dotted black;
+  border: 0.1px solid black;
 }

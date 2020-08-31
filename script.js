@@ -3,63 +3,74 @@ const playerbut = document.querySelector("#player-button");
 const resetbut = document.querySelector("#reset-button");
 const colorpick = document.querySelector("#colorpicker");
 const pixels = document.querySelectorAll(".pixel");
+const rainbow = document.querySelector("#rainbow");
 let interval = null;
 let playerc = 16;
-let bruh = false;
-let isitin = false;
+let check = false;
 
 gridbut();
 createGrid();
 listener();
+getRandomArbitrary();
 
 function listener() {
-  listenerhelper();
-  listenmove();
-  document.querySelectorAll(".pixel").forEach((el) => {
-    el.addEventListener("mousedown", (e) => {
-      bruh = true;
-      console.log("listener");
-    });
+  window.addEventListener("mouseup", () => {
+    if (check === true) {
+      check = false;
+    }
   });
-}
-
-function listenmove() {
   document.querySelectorAll(".pixel").forEach((el) => {
     el.addEventListener("mouseover", (e) => {
-      if (bruh === true) {
+      if (check === true) {
         el.style.backgroundColor = colorpick.value;
       }
     });
   });
+  colorpick.addEventListener("click", () => {
+    document.querySelectorAll(".pixel").forEach((el) => {
+      el.addEventListener("mouseover", (e) => {
+        if (check === true) {
+          el.style.backgroundColor = colorpick.value;
+        }
+      });
+    });
+  });
+  rainbow.addEventListener("click", () => {
+    document.querySelectorAll(".pixel").forEach((el) => {
+      el.addEventListener("mouseover", (e) => {
+        if (check === true) {
+          el.style.backgroundColor = `rgb(
+            ${getRandomArbitrary(0, 255)},
+            ${getRandomArbitrary(0, 255)},
+            ${getRandomArbitrary(0, 255)}
+          )`;
+        }
+      });
+    });
+  });
+  document.querySelectorAll(".pixel").forEach((el) => {
+    el.addEventListener("mousedown", (e) => {
+      check = true;
+    });
+  });
 }
 
-function listenerhelper() {
-  window.addEventListener("mouseup", () => {
-    if (bruh === true) {
-      bruh = false;
-      console.log("helper");
-    }
-  });
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 function gridbut() {
   playerbut.addEventListener("click", () => {
     playerc = prompt("Enter a number between 2 and 100", "16");
-
     createGrid();
     listener();
   });
 
   resetbut.addEventListener("click", () => {
+    playerc = 16;
     createGrid();
     listener();
   });
-}
-
-function deleter() {
-  while (contain.firstChild) {
-    contain.firstChild.remove();
-  }
 }
 
 function createpixel() {
@@ -72,7 +83,9 @@ function createpixel() {
 }
 
 function createGrid() {
-  deleter();
+  while (contain.firstChild) {
+    contain.firstChild.remove();
+  }
   for (let x = 0; x < playerc; x++) {
     for (let y = 0; y < playerc; y++) {
       createpixel();
