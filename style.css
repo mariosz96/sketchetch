@@ -12,7 +12,7 @@ body {
   width: fit-content;
   margin: 0 auto;
   border: 15px solid black;
-  border-radius: 1rem;
+  border-radius: 2%;
 }
 
 #skcontainer {
@@ -51,7 +51,7 @@ button {
   color: #ffffff;
   font-family: Trebuchet MS;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 5px;
   text-decoration: none;
   text-shadow: 3px 2px 5px #5b6178;
@@ -65,5 +65,5 @@ button:active {
 }
 
 .pixel {
-  border: 0.1px solid black;
+  border: 0.1px solid rgb(37, 37, 37);
 }

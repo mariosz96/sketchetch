@@ -4,14 +4,12 @@ const resetbut = document.querySelector("#reset-button");
 const colorpick = document.querySelector("#colorpicker");
 const pixels = document.querySelectorAll(".pixel");
 const rainbow = document.querySelector("#rainbow");
-let interval = null;
 let playerc = 16;
 let check = false;
 
 gridbut();
 createGrid();
 listener();
-getRandomArbitrary();
 
 function listener() {
   window.addEventListener("mouseup", () => {
